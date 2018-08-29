@@ -1,11 +1,19 @@
 <div class="element-left-bottom">
   <div class="ele-strip">
-      <ul>
+      
+      <ul *ngIf="!loading; else loadRefDots" >
           <li *ngFor="let type of listTypes; let last = last"
               [class.anc-bor]="last">
               <a href="#">{{type}}</a>
           </li>
       </ul>
+      <ng-template #loadRefDots >
+        <ul>
+          <li class="anc-bor">
+            <img src="../../assets/images/loader-dots.svg" width="60" alt="">
+          </li>
+        </ul>
+        </ng-template>
   </div>
   <div class="village">
       <h3>Righteous indignation & like</h3>
